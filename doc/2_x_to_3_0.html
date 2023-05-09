@@ -1,0 +1,383 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml"
+  lang="en">
+  <head>
+    <meta
+      http-equiv="content-type"
+      content="text/html; charset=utf-8" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="retroblit_favicon.ico" />
+    <title>RetroBlit - RetroBlit 2.x to 3.0 Guide</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto+Mono:500"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="doc.css" />
+  </head>
+  <body>
+    <table
+      class="container_div">
+      <tr
+        style="padding: 0px; margin: 0px">
+        <td
+          class="title_div">
+          <table
+            class="menu_shadow"
+            style="background-color: e6eefc; padding: 0px; margin: 0px; width: 100%;">
+            <tr
+              style="padding: 0px; margin: 0px">
+              <td
+                style="padding: 0px; margin: 0px">
+                <img
+                  src="top_menu_logo.png"
+                  style="width: 69px; height: 85px; image-rendering: pixelated; padding-right:1em;"
+                  alt="RetroBlit" />
+              </td>
+              <td>
+                <span
+                  style="font-size: 24px; font-variant: small-caps;">Documentation</span>
+                <br />
+                <span
+                  style="font-size: 12px;">v3.2.0</span>
+              </td>
+              <td
+                style="width:12em"></td>
+              <td
+                class="menu_darkbg_shadow"
+                style="width:0.15em; padding: 0.15em" />
+              <td
+                class="menu_darkbg"
+                style="width:1em;" />
+              <td
+                class="menu_darkbg">
+                <table
+                  style="height:75% float:right">
+                  <tr>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="index.html">Intro</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="features.html">Features</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="unity.html">Unity<br />Crash Course</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="RB_class.html">API<br />Reference</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="history.html">Version<br />History</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="legal.html">Legal</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                  </tr>
+                </table>
+              </td>
+              <td
+                class="menu_darkbg">
+ 
+</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table>
+            <tr>
+              <td
+                class="content_div">
+                <a
+                  name="retroblit_2x_to_30_porting_guide"></a>
+                <h1>RetroBlit 2.x to 3.0 Porting Guide</h1>
+                <p>The main difference betwen RetroBlit 2.x and 3.0 is the new asset loading and management system. If you plan on porting your project from an older version then this guide
+should help ease the porting work.</p>
+                <p>Before doing any porting make sure you make a backup of your project, or use source control software (eg. git or svn).</p>
+                <p>To convert from the old to the new asset system follow the example below</p>
+                <a
+                  name="retroblit_2x_example"></a>
+                <h2>RetroBlit 2.x Example</h2>
+                <table
+                  class="code_table">
+                  <tr>
+                    <td
+                      class="code_block">
+                      <span
+                        class="code_type">const</span> <span
+                        class="code_type">int</span> SPRITESHEET_MAIN = <span
+                        class="code_literal">0</span>;<br /><span
+                        class="code_type">const</span> <span
+                        class="code_type">int</span> SPRITEPACK_HERO = <span
+                        class="code_literal">1</span>;<br /><br /><span
+                        class="code_type">const</span> <span
+                        class="code_type">int</span> SOUND_BLEEPBLOOP = <span
+                        class="code_literal">0</span>;<br /><span
+                        class="code_type">const</span> <span
+                        class="code_type">int</span> SOUND_EXPLOSION = <span
+                        class="code_literal">1</span>;<br /><br /><span
+                        class="code_type">const</span> <span
+                        class="code_type">int</span> MUSIC_TITLE = <span
+                        class="code_literal">0</span>;<br /><br /><span
+                        class="code_type">const</span> <span
+                        class="code_type">int</span> SHADER_WATER = <span
+                        class="code_literal">0</span>;<br /><span
+                        class="code_type">const</span> <span
+                        class="code_type">int</span> SHADER_FOG = <span
+                        class="code_literal">1</span>;<br /><span
+                        class="code_type">const</span> <span
+                        class="code_type">int</span> SHADER_FIRE = <span
+                        class="code_literal">1</span>;<br /><br /><span
+                        class="code_keyword">public</span> <span
+                        class="code_type">void</span> Initialize()<br />{<br />    <a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.SpriteSheetSetup(SPRITESHEET_MAIN, <span
+                        class="code_literal">"main_sprites"</span>, <span
+                        class="code_keyword">new</span> <a
+                        style="code_link"
+                        href="Vector2i_struct.html"><span
+                          class="code_rb">Vector2i</span></a>(<span
+                        class="code_literal">16</span>, <span
+                        class="code_literal">16</span>));<br />    <a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.SpriteSheetSetup(SPRITEPACK_HERO, <span
+                        class="code_literal">"hero_spritepack"</span>, <span
+                        class="code_keyword">new</span> <a
+                        style="code_link"
+                        href="Vector2i_struct.html"><span
+                          class="code_rb">Vector2i</span></a>(<span
+                        class="code_literal">16</span>, <span
+                        class="code_literal">16</span>));<br />    <a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.<a
+                        style="code_link"
+                        href="RB__SpriteSheetSet_function.html"><span
+                          class="code_rb">SpriteSheetSet</span></a>(SPRITESHEET_MAIN);<br /><br />    <a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.SoundSetup(SOUND_BLEEPBLOOP, <span
+                        class="code_literal">"bleepbloop"</span>);<br />    <a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.SoundSetup(SOUND_EXPLOSION, <span
+                        class="code_literal">"explosion"</span>);<br />    <br />    <a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.MusicSetup(MUSIC_TITLE, <span
+                        class="code_literal">"title_music"</span>);<br /><br />    <a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.ShaderSetup(SHADER_WATER, <span
+                        class="code_literal">"water_shader"</span>);<br />    <a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.ShaderSetup(SHADER_FOG, <span
+                        class="code_literal">"fog_shader"</span>);<br />    <a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.ShaderSetup(SHADER_FIRE, <span
+                        class="code_literal">"fire_shader"</span>);<br />}<br /><br /><span
+                        class="code_keyword">public</span> <span
+                        class="code_type">void</span> Render()<br />{<br />    <a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.<a
+                        style="code_link"
+                        href="RB__SpriteSheetSet_function.html"><span
+                          class="code_rb">SpriteSheetSet</span></a>(SPRITESHEET_MAIN);<br />    <a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.<a
+                        style="code_link"
+                        href="RB__DrawSprite_function.html"><span
+                          class="code_rb">DrawSprite</span></a>(<span
+                        class="code_literal">0</span>, <span
+                        class="code_keyword">new</span> <a
+                        style="code_link"
+                        href="Vector2i_struct.html"><span
+                          class="code_rb">Vector2i</span></a>(<span
+                        class="code_literal">100</span>, <span
+                        class="code_literal">100</span>));<br />}</td>
+                  </tr>
+                </table>
+                <a
+                  name="retroblit_30_converted_example"></a>
+                <h2>RetroBlit 3.0 Converted Example</h2>
+                <table
+                  class="code_table">
+                  <tr>
+                    <td
+                      class="code_block">
+                      <a
+                        style="code_link"
+                        href="SpriteSheetAsset_class.html">
+                        <span
+                          class="code_rb">SpriteSheetAsset</span>
+                      </a> spriteSheetMain = <span
+                        class="code_keyword">new</span> <a
+                        style="code_link"
+                        href="SpriteSheetAsset_class.html"><span
+                          class="code_rb">SpriteSheetAsset</span></a>();<br /><a
+                        style="code_link"
+                        href="SpriteSheetAsset_class.html"><span
+                          class="code_rb">SpriteSheetAsset</span></a> spritePackHero = <span
+                        class="code_keyword">new</span> <a
+                        style="code_link"
+                        href="SpriteSheetAsset_class.html"><span
+                          class="code_rb">SpriteSheetAsset</span></a>();<br /><br /><a
+                        style="code_link"
+                        href="AudioAsset_class.html"><span
+                          class="code_rb">AudioAsset</span></a> soundBleepBloop = <span
+                        class="code_keyword">new</span> <a
+                        style="code_link"
+                        href="AudioAsset_class.html"><span
+                          class="code_rb">AudioAsset</span></a>();<br /><a
+                        style="code_link"
+                        href="AudioAsset_class.html"><span
+                          class="code_rb">AudioAsset</span></a> soundExplosion = <span
+                        class="code_keyword">new</span> <a
+                        style="code_link"
+                        href="AudioAsset_class.html"><span
+                          class="code_rb">AudioAsset</span></a>();<br /><br /><a
+                        style="code_link"
+                        href="AudioAsset_class.html"><span
+                          class="code_rb">AudioAsset</span></a> musicTitle = <span
+                        class="code_keyword">new</span> <a
+                        style="code_link"
+                        href="AudioAsset_class.html"><span
+                          class="code_rb">AudioAsset</span></a>();<br /><br /><a
+                        style="code_link"
+                        href="ShaderAsset_class.html"><span
+                          class="code_rb">ShaderAsset</span></a> shaderWater = <span
+                        class="code_keyword">new</span> <a
+                        style="code_link"
+                        href="ShaderAsset_class.html"><span
+                          class="code_rb">ShaderAsset</span></a>();<br /><a
+                        style="code_link"
+                        href="ShaderAsset_class.html"><span
+                          class="code_rb">ShaderAsset</span></a> shaderFog = <span
+                        class="code_keyword">new</span> <a
+                        style="code_link"
+                        href="ShaderAsset_class.html"><span
+                          class="code_rb">ShaderAsset</span></a>();<br /><a
+                        style="code_link"
+                        href="ShaderAsset_class.html"><span
+                          class="code_rb">ShaderAsset</span></a> shaderFire = <span
+                        class="code_keyword">new</span> <a
+                        style="code_link"
+                        href="ShaderAsset_class.html"><span
+                          class="code_rb">ShaderAsset</span></a>();<br /><br /><span
+                        class="code_keyword">public</span> <span
+                        class="code_type">void</span> Initialize() {<br />    spriteSheetMain.Load(<span
+                        class="code_literal">"main_sprites"</span>);<br />    spriteSheetMain.grid = <span
+                        class="code_keyword">new</span> <a
+                        style="code_link"
+                        href="SpriteGrid_struct.html"><span
+                          class="code_rb">SpriteGrid</span></a>(<span
+                        class="code_keyword">new</span> <a
+                        style="code_link"
+                        href="Vector2i_struct.html"><span
+                          class="code_rb">Vector2i</span></a>(<span
+                        class="code_literal">16</span>, <span
+                        class="code_literal">16</span>));<br /><br />    spritePackHero.Load(<span
+                        class="code_literal">"hero_spritepack"</span>, <a
+                        style="code_link"
+                        href="SpriteSheetAsset_class.html"><span
+                          class="code_rb">SpriteSheetAsset</span></a>.<a
+                        style="code_link"
+                        href="SpriteSheetAsset__SheetType_enum.html"><span
+                          class="code_rb">SheetType</span></a>.SpritePack);<br /><br />    soundBleepBloop.Load(<span
+                        class="code_literal">"bleepbloop"</span>);<br />    soundExplosion.Load(<span
+                        class="code_literal">"explosion"</span>);<br />    <br />    musicTitle.Load(<span
+                        class="code_literal">"title_music"</span>);<br /><br />    shaderWater.Load(<span
+                        class="code_literal">"water_shader"</span>);<br />    shaderWater.Load(<span
+                        class="code_literal">"fog_shader"</span>);<br />    shaderWater.Load(<span
+                        class="code_literal">"fire_shader"</span>);<br />}<br /><br /><span
+                        class="code_keyword">public</span> <span
+                        class="code_type">void</span> Render()<br />{<br />    <a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.<a
+                        style="code_link"
+                        href="RB__SpriteSheetSet_function.html"><span
+                          class="code_rb">SpriteSheetSet</span></a>(spriteSheetMain);<br />    <a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.<a
+                        style="code_link"
+                        href="RB__DrawSprite_function.html"><span
+                          class="code_rb">DrawSprite</span></a>(<span
+                        class="code_literal">0</span>, <span
+                        class="code_keyword">new</span> <a
+                        style="code_link"
+                        href="Vector2i_struct.html"><span
+                          class="code_rb">Vector2i</span></a>(<span
+                        class="code_literal">100</span>, <span
+                        class="code_literal">100</span>));<br />}</td>
+                  </tr>
+                </table>
+                <a
+                  name="asynchronous_asset_loading"></a>
+                <h2>Asynchronous Asset Loading</h2>
+                <p>The above example is a 1:1 conversion from 2.x asset system to the new 3.0 system. However the new system brings new asset loading features that you may also want to explore.
+The main purpose of the asset system redesign was to allow for new asset sources and asynchronous loading,
+see <a
+                    class="doc_link"
+                    href="features.html#asynchronous_asset_loading">Asynchronous Asset Loading</a> for more information.</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="footer_div">
+© 2021 Martin Cietwierkowski
+</td>
+      </tr>
+    </table>
+  </body>
+</html>

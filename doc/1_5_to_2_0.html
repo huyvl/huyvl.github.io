@@ -1,0 +1,275 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml"
+  lang="en">
+  <head>
+    <meta
+      http-equiv="content-type"
+      content="text/html; charset=utf-8" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="retroblit_favicon.ico" />
+    <title>RetroBlit - FES 1.5 to RetroBlit 2.0 Guide</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto+Mono:500"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="doc.css" />
+  </head>
+  <body>
+    <table
+      class="container_div">
+      <tr
+        style="padding: 0px; margin: 0px">
+        <td
+          class="title_div">
+          <table
+            class="menu_shadow"
+            style="background-color: e6eefc; padding: 0px; margin: 0px; width: 100%;">
+            <tr
+              style="padding: 0px; margin: 0px">
+              <td
+                style="padding: 0px; margin: 0px">
+                <img
+                  src="top_menu_logo.png"
+                  style="width: 69px; height: 85px; image-rendering: pixelated; padding-right:1em;"
+                  alt="RetroBlit" />
+              </td>
+              <td>
+                <span
+                  style="font-size: 24px; font-variant: small-caps;">Documentation</span>
+                <br />
+                <span
+                  style="font-size: 12px;">v3.2.0</span>
+              </td>
+              <td
+                style="width:12em"></td>
+              <td
+                class="menu_darkbg_shadow"
+                style="width:0.15em; padding: 0.15em" />
+              <td
+                class="menu_darkbg"
+                style="width:1em;" />
+              <td
+                class="menu_darkbg">
+                <table
+                  style="height:75% float:right">
+                  <tr>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="index.html">Intro</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="features.html">Features</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="unity.html">Unity<br />Crash Course</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="RB_class.html">API<br />Reference</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="history.html">Version<br />History</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="legal.html">Legal</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                  </tr>
+                </table>
+              </td>
+              <td
+                class="menu_darkbg">
+ 
+</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table>
+            <tr>
+              <td
+                class="content_div">
+                <a
+                  name="fes_150_to_retroblit_200_porting_guide"></a>
+                <h1>FES 1.5.0 to RetroBlit 2.0.0 Porting Guide</h1>
+                <p>There has been a number of changes in RetroBlit 2.0 from the previous version. If you plan on porting your project from an older version then this guide
+should help ease the porting work. Before doing any porting make sure you make a backup of your project, or use source control software (eg. git or svn).
+Follow these steps to get started:</p>
+                <ol>
+                  <li>
+Create a new dummy project and get the RetroBlit asset for it from the Asset Store
+</li>
+                  <li>
+Go back to your original project and delete <span
+                      class="filename">Assets/FES</span> and replace with <span
+                      class="filename">Assets/RetroBlit</span> from the dummy project
+</li>
+                  <li>Replace:
+<ul><li><b>FES.IFESGame</b> → <a
+                          href="RB__IRetroBlitGame_interface.html"><b>RB.IRetroBlitGame</b></a></li></ul></li>
+                  <li>
+Search and Replace these strings in your entire project:
+<ul><li><b>FES</b> → <b>RB</b></li><li><b>Size2i</b> → <b>Vector2i</b></li><li><b>ColorRGBA</b> → <b>Color32</b></li></ul></li>
+                  <li>RetroBlit no longer supports indexed color mode. If your previous project was using indexed color mode then consider creating a color lookup table and using it in place of color indecies, for example:</li>
+                </ol>
+                <table
+                  class="code_table">
+                  <tr>
+                    <td
+                      class="code_block">
+                      <span
+                        class="code_keyword">using</span> UnityEngine;<br /><br /><span
+                        class="code_keyword">public</span> <span
+                        class="code_type">class</span> Pal<br />{<br />    <span
+                        class="code_comment">// Color palette</span><br />    <span
+                        class="code_keyword">public</span> <span
+                        class="code_type">static</span> Color32[] C;<br /><br />    <span
+                        class="code_comment">// String representations of the color palette, for inline text coloring</span><br />    <span
+                        class="code_keyword">public</span> <span
+                        class="code_type">static</span> <span
+                        class="code_type">string</span>[] S;<br /><br />    <span
+                        class="code_comment">// Call this once in your startup code</span><br />    <span
+                        class="code_keyword">public</span> <span
+                        class="code_type">static</span> <span
+                        class="code_type">void</span> Initialize()<br />    {<br />        C = <span
+                        class="code_keyword">new</span> Color32[<span
+                        class="code_literal">256</span>];<br /><br />        C[<span
+                        class="code_literal">0</span>] = <span
+                        class="code_keyword">new</span> Color32(<span
+                        class="code_literal">0</span>, <span
+                        class="code_literal">0</span>, <span
+                        class="code_literal">0</span>, <span
+                        class="code_literal">255</span>);<br />        C[<span
+                        class="code_literal">1</span>] = <span
+                        class="code_keyword">new</span> Color32(<span
+                        class="code_literal">254</span>, <span
+                        class="code_literal">255</span>, <span
+                        class="code_literal">255</span>, <span
+                        class="code_literal">255</span>);<br />        C[<span
+                        class="code_literal">2</span>] = <span
+                        class="code_keyword">new</span> Color32(<span
+                        class="code_literal">46</span>, <span
+                        class="code_literal">41</span>, <span
+                        class="code_literal">40</span>, <span
+                        class="code_literal">255</span>);<br />        C[<span
+                        class="code_literal">3</span>] = <span
+                        class="code_keyword">new</span> Color32(<span
+                        class="code_literal">226</span>, <span
+                        class="code_literal">0</span>, <span
+                        class="code_literal">0</span>, <span
+                        class="code_literal">255</span>);<br />        C[<span
+                        class="code_literal">4</span>] = <span
+                        class="code_keyword">new</span> Color32(<span
+                        class="code_literal">224</span>, <span
+                        class="code_literal">33</span>, <span
+                        class="code_literal">34</span>, <span
+                        class="code_literal">255</span>);<br />        <br />        <span
+                        class="code_comment">// Add more colors if needed</span><br /><br />        S = <span
+                        class="code_keyword">new</span> <span
+                        class="code_type">string</span>[<span
+                        class="code_literal">256</span>];<br /><br />        <span
+                        class="code_keyword">for</span> (<span
+                        class="code_type">int</span> i = <span
+                        class="code_literal">0</span>; i &lt; C.Length; i++)<br />        {<br />            S[i] = <span
+                        class="code_literal">"@"</span> + C[i].r.ToString(<span
+                        class="code_literal">"X2"</span>) + C[i].g.ToString(<span
+                        class="code_literal">"X2"</span>) + C[i].b.ToString(<span
+                        class="code_literal">"X2"</span>);<br />        }<br /><br />        <span
+                        class="code_comment">// Collect all the garbage generated by creating color strings!</span><br />        System.GC.Collect();<br />    }<br />}</td>
+                  </tr>
+                </table>
+                <p>Now you can use your color palette like this:</p>
+                <table
+                  class="code_table">
+                  <tr>
+                    <td
+                      class="code_block">
+                      <a
+                        style="code_link"
+                        href="RB_class.html">
+                        <span
+                          class="code_rb">RB</span>
+                      </a>.<a
+                        style="code_link"
+                        href="RB__DrawRect_function.html"><span
+                          class="code_rb">DrawRect</span></a>(<span
+                        class="code_keyword">new</span> <a
+                        style="code_link"
+                        href="Rect2i_struct.html"><span
+                          class="code_rb">Rect2i</span></a>(<span
+                        class="code_literal">0</span>, <span
+                        class="code_literal">0</span>, <span
+                        class="code_literal">32</span>, <span
+                        class="code_literal">32</span>), Pal.C[<span
+                        class="code_literal">2</span>]);<br /><a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.<a
+                        style="code_link"
+                        href="RB__Print_function.html"><span
+                          class="code_rb">Print</span></a>(<span
+                        class="code_keyword">new</span> <a
+                        style="code_link"
+                        href="Vector2i_struct.html"><span
+                          class="code_rb">Vector2i</span></a>(<span
+                        class="code_literal">0</span>, <span
+                        class="code_literal">0</span>), Pal.C[<span
+                        class="code_literal">1</span>], <span
+                        class="code_literal">"Hit for "</span> + Pal.S[<span
+                        class="code_literal">3</span>] + <span
+                        class="code_literal">"10"</span>);</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="footer_div">
+© 2021 Martin Cietwierkowski
+</td>
+      </tr>
+    </table>
+  </body>
+</html>

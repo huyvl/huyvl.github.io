@@ -1,0 +1,610 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml"
+  lang="en">
+  <head>
+    <meta
+      http-equiv="content-type"
+      content="text/html; charset=utf-8" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="retroblit_favicon.ico" />
+    <title>RetroBlit - Version History</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto+Mono:500"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="doc.css" />
+  </head>
+  <body>
+    <table
+      class="container_div">
+      <tr
+        style="padding: 0px; margin: 0px">
+        <td
+          class="title_div">
+          <table
+            class="menu_shadow"
+            style="background-color: e6eefc; padding: 0px; margin: 0px; width: 100%;">
+            <tr
+              style="padding: 0px; margin: 0px">
+              <td
+                style="padding: 0px; margin: 0px">
+                <img
+                  src="top_menu_logo.png"
+                  style="width: 69px; height: 85px; image-rendering: pixelated; padding-right:1em;"
+                  alt="RetroBlit" />
+              </td>
+              <td>
+                <span
+                  style="font-size: 24px; font-variant: small-caps;">Documentation</span>
+                <br />
+                <span
+                  style="font-size: 12px;">v3.2.0</span>
+              </td>
+              <td
+                style="width:12em"></td>
+              <td
+                class="menu_darkbg_shadow"
+                style="width:0.15em; padding: 0.15em" />
+              <td
+                class="menu_darkbg"
+                style="width:1em;" />
+              <td
+                class="menu_darkbg">
+                <table
+                  style="height:75% float:right">
+                  <tr>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="index.html">Intro</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="features.html">Features</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="unity.html">Unity<br />Crash Course</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="RB_class.html">API<br />Reference</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item_selected">
+Version<br />History
+</td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="legal.html">Legal</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                  </tr>
+                </table>
+              </td>
+              <td
+                class="menu_darkbg">
+ 
+</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table>
+            <tr>
+              <td
+                class="content_div">
+                <a
+                  name="v320__april_6_2022"></a>
+                <h1>v3.2.0 - April 6, 2022</h1>
+                <a
+                  name="new"></a>
+                <h2>New:</h2>
+                <ul>
+                  <li>Added new API for controlling how Music Cross-fade is performed, <a
+                      href="RB__MusicCrossFadeSet_function.html"><b>RB.MusicCrossFadeSet</b></a></li>
+                  <li>Improve curvature post processing effect</li>
+                  <li>Improve performance on low-end mobile devices</li>
+                  <li>New API <a
+                      href="RB__LoadingAssetsCount_function.html"><b>RB.LoadingAssetsCount</b></a> returns count of pending async assets</li>
+                </ul>
+                <a
+                  name="bug_fixes"></a>
+                <h2>Bug Fixes:</h2>
+                <ul>
+                  <li>Fix parsing of TMX files on systems with localization/encoding settings different than TMX default</li>
+                  <li>Change index buffer from 32bit to 16bit to support low-end devices that can't handle 32bit index buffers</li>
+                  <li>Fix potential crash when async loading SpritePacks from Addressable Assets</li>
+                </ul>
+                <a
+                  name="v311__november_15_2021"></a>
+                <h1>v3.1.1 - November 15, 2021</h1>
+                <a
+                  name="bug_fixes1"></a>
+                <h2>Bug Fixes:</h2>
+                <ul>
+                  <li>Fix music playback stopping if the playing AudioClip is destroyed, and recreated</li>
+                  <li>Fix compilation issue when Addressable Assets are enabled</li>
+                  <li>Revert accidental changes made to MyGame demo project</li>
+                  <li>Explicitly remove Unity built-in package dependencies, RetroBlit has no dependencies</li>
+                </ul>
+                <a
+                  name="v310__august_15_2021"></a>
+                <h1>v3.1.0 - August 15, 2021</h1>
+                <a
+                  name="new1"></a>
+                <h2>New:</h2>
+                <ul>
+                  <li>Add support for textured lines with <a
+                      href="RB__DrawLineTextured_function.html"><b>RB.DrawLineTextured</b></a></li>
+                  <li>Add support for solid lines of specified thickness</li>
+                  <li>UVs in shader are now in sprite space (0,0) to (1,1) rather than spritesheet space. Please rebase any custom shaders against new RetroBlit shaders. See <a
+                      class="doc_link"
+                      href="features.html#shaders_advanced_topic">Shaders</a></li>
+                  <li>Added Chromatic Aberration post-processing effect</li>
+                  <li>Desaturation post-processing effect now renamed Saturation and ranges from -1.0 Desaturated, to 1.0 Over-saturated</li>
+                  <li>Slightly improved scanline and noise effects</li>
+                  <li>Add IEquatable to <a
+                      href="Vector2i_struct.html"><b>Vector2i</b></a>, <a
+                      href="Rect2i_struct.html"><b>Rect2i</b></a>, <a
+                      href="PackedSpriteID_struct.html"><b>PackedSpriteID</b></a> to avoid GC when used in containers like List or Dictionary</li>
+                  <li>RetroBlit now requires Unity version 2019.3+</li>
+                </ul>
+                <a
+                  name="bug_fixes2"></a>
+                <h2>Bug Fixes:</h2>
+                <ul>
+                  <li>Fixed <a
+                      href="TMXMapAsset__TMXProperties_class.html"><b>TMXProperties</b></a> loading when using SpritePack lookup</li>
+                  <li>Fix text measurement and alignment when using shaky font effect</li>
+                  <li>Fix inline inline font switching when switching multiple times in a single print</li>
+                  <li>Fix <a
+                      href="FastString_class.html"><b>FastString</b></a> formatting of negative floats with 0 whole number</li>
+                </ul>
+                <a
+                  name="v300__march_3_2021"></a>
+                <h1>v3.0.0 - March 3, 2021</h1>
+                <a
+                  name="new2"></a>
+                <h2>New:</h2>
+                <ul>
+                  <li>Refactored assets, instead of "asset slots" there are now asset classes for each asset type, <a
+                      href="SpriteSheetAsset_class.html"><b>SpriteSheetAsset</b></a>, <a
+                      href="AudioAsset_class.html"><b>AudioAsset</b></a>, <a
+                      href="ShaderAsset_class.html"><b>ShaderAsset</b></a>, <a
+                      href="TMXMapAsset_class.html"><b>TMXMapAsset</b></a>, <a
+                      href="FontAsset_class.html"><b>FontAsset</b></a></li>
+                  <li>Added support for asynchronous asset loading from Resources, WWW, and Addressable Assets!</li>
+                  <li>Added support for making RetroBlit assets out of existing Unity resources such as <b>Texture2D</b> or <b>AudioClip</b>. This allows for custom asset loading.</li>
+                  <li>Added <a
+                      href="RB__DrawPixelBuffer_function.html"><b>RB.DrawPixelBuffer</b></a> for drawing a pixel buffer to display</li>
+                  <li>Added 2D spatial audio support</li>
+                  <li>Added audio priority support</li>
+                  <li>Drawing performance improvements, and even more performance gain in Unity 2019.3+</li>
+                  <li>Added <a
+                      href="SpriteGrid_struct.html"><b>SpriteGrid</b></a>, which replaces <b>SpriteSize</b> and allows for setting up a sprite grid anywhere within a spritesheet image</li>
+                  <li>RetroBlit garbage generation from frame-to-frame is reduced from 40 bytes to 0</li>
+                </ul>
+                <a
+                  name="bug_fixes3"></a>
+                <h2>Bug Fixes:</h2>
+                <ul>
+                  <li>Fixed bug where music would get stuck while cross fading if user was changing music volume at the same time</li>
+                  <li>Fixed some non-power of two textures being resized to nearest power of two</li>
+                  <li>Fixed <a
+                      href="RB__DrawRect_function.html"><b>RB.DrawRect</b></a> rotating in the wrong direction</li>
+                  <li>Fixed <a
+                      href="RB__DrawLine_function.html"><b>RB.DrawLine</b></a> pivot point to be the middle of the line</li>
+                </ul>
+                <p>See <a
+                    href="2_x_to_3_0.html"><b>RetroBlit 2.x to RetroBlit 3.0 porting guide</b></a>.</p>
+                <br />
+                <a
+                  name="v231__december_14_2019"></a>
+                <h1>v2.3.1 - December 14, 2019</h1>
+                <a
+                  name="new3"></a>
+                <h2>New:</h2>
+                <ul>
+                  <li>Added a new ReadMe inspector pane to help guide new users.</li>
+                  <li>Minimum supported Unity version is now 2017.4 (LTS).</li>
+                </ul>
+                <a
+                  name="bug_fixes4"></a>
+                <h2>Bug Fixes:</h2>
+                <ul>
+                  <li>Re-packaged RetroBlit using new version of Asset Store Tools to fix some import issues in later version of Unity.</li>
+                </ul>
+                <a
+                  name="v230__november_19_2019"></a>
+                <h1>v2.3.0 - November 19, 2019</h1>
+                <a
+                  name="new4"></a>
+                <h2>New:</h2>
+                <ul>
+                  <li>Added "any key" support through new APIs <a
+                      href="RB__AnyKeyDown_function.html"><b>RB.AnyKeyDown</b></a>, <a
+                      href="RB__AnyKeyPressed_function.html"><b>RB.AnyKeyPressed</b></a>, <a
+                      href="RB__AnyKeyReleased_function.html"><b>RB.AnyKeyReleased</b></a>.</li>
+                  <li>Improved ellipse drawing performance, line quality, and perfect symmetry.</li>
+                  <li>Added new APIs to <a
+                      href="FastString_class.html"><b>FastString</b></a> for finding substrings, trimming, padding, and more.</li>
+                  <li>Added equality operator to <a
+                      href="PackedSpriteID_struct.html"><b>PackedSpriteID</b></a> and <a
+                      href="PackedSprite_struct.html"><b>PackedSprite</b></a>.</li>
+                  <li>Added Retro Dungeoneer, a roguelike demo game.</li>
+                </ul>
+                <a
+                  name="bug_fixes5"></a>
+                <h2>Bug Fixes:</h2>
+                <ul>
+                  <li>Fix bug in <a
+                      href="Rect2i__Intersect_function.html"><b>Rect2i.Intersect</b></a>.</li>
+                </ul>
+                <a
+                  name="v221__june_22_2019"></a>
+                <h1>v2.2.1 - June 22, 2019</h1>
+                <a
+                  name="bug_fixes6"></a>
+                <h2>Bug Fixes:</h2>
+                <ul>
+                  <li>Fix regression with custom font measurements and rendering.</li>
+                </ul>
+                <a
+                  name="v220__june_20_2019"></a>
+                <h1>v2.2.0 - June 20, 2019</h1>
+                <a
+                  name="new5"></a>
+                <h2>New:</h2>
+                <ul>
+                  <li>Added Unicode support to built-in and custom fonts! See <a
+                      href="systemfont.html"><b>Built-in System Font</b></a>.</li>
+                  <li>Added Multi-touch support, up to 4 touch points can be tracked with <a
+                      href="RB__PointerPos_function.html"><b>RB.PointerPos</b></a>. See <a
+                      href="features.html#multitouch_support"><b>Multi-touch support</b></a>.</li>
+                  <li>
+                    <b>RB.BTN_POINTER_ABC</b> renamed to <a
+                      href="RB__BTN_POINTER_ANY_variable.html"><b>RB.BTN_POINTER_ANY</b></a>, <a
+                      href="RB__BTN_POINTER_D_variable.html"><b>RB.BTN_POINTER_D</b></a> added.</li>
+                  <li>Added <a
+                      href="RB__NativeScreenToDisplayPos_function.html"><b>RB.NativeScreenToDisplayPos</b></a> for translating native screen coordinates to RetroBlit display coordinates.</li>
+                  <li>Added <a
+                      href="RB__NO_ESCAPE_CODES_variable.html"><b>RB.NO_ESCAPE_CODES</b></a> flag for <a
+                      href="RB__Print_function.html"><b>Print</b></a> to ignore RetroBlit string escape codes and print the raw string.</li>
+                  <li>Rewrote and vastly improved documentation, including over 9000 lines of API documentation!</li>
+                </ul>
+                <a
+                  name="bug_fixes7"></a>
+                <h2>Bug Fixes:</h2>
+                <ul>
+                  <li>Fix music not stopping and audio not cleaning up when switching games with <a
+                      href="RB__Initialize_function.html"><b>RB.Initialize</b></a>.</li>
+                  <li>Don't let sprite sizes be bigger than sprite sheet size.</li>
+                  <li>Fix sprite clipping when using <a
+                      href="RB__ROT_90_CW_variable.html"><b>RB.ROT_90_CW</b></a> flag.</li>
+                </ul>
+                <br />
+                <a
+                  name="v210__march_5_2019"></a>
+                <h1>v2.1.0 - March 5, 2019</h1>
+                <a
+                  name="new6"></a>
+                <h2>New:</h2>
+                <ul>
+                  <li>Sprite Pack support! RetroBlit can now generate optimized sprite sheets out of individual sprite images. This allows you to reference sprites by their file names, rather than sprite sheet coordinates.</li>
+                  <li>Sprite Sheets can now be created out of existing Unity RenderTextures, this can allow for better integration with more typical Unity scenes.</li>
+                </ul>
+                <br />
+                <a
+                  name="v200__december_3_2018"></a>
+                <h1>v2.0.0 - December 3, 2018</h1>
+                <a
+                  name="new7"></a>
+                <h2>New:</h2>
+                <ul>
+                  <li>FES is now named RetroBlit!</li>
+                  <li>Tiled TMX support reworked!</li>
+                  <li>TMX files are automatically converted into a RetroBlit binary format for faster access.</li>
+                  <li>Added support for TMX map, layer, object, and tile properties.</li>
+                  <li>Added support for TMX objects, with support for object templates.</li>
+                  <li>Added support for TMX infinite maps, and chunk by chunk loading.</li>
+                  <li>All TMX compression formats are now supported.</li>
+                  <li>Significant performance improvements, sprite benchmarks are up to 2-3x faster.</li>
+                  <li>Allocation garabage generated in RetroBlit from frame to frame is reduced from 500-2000 bytes down to 40 bytes. No Garbage Collection hiccups.</li>
+                  <li>Added <a
+                      href="FastString_class.html"><b>FastString</b></a> class, a zero-garbage replacement for strings.</li>
+                  <li>Added a set of 30 easing functions for interpolating values, vectors, colors and more!</li>
+                  <li>Added ability to render into any sprite sheet, as well as creating blank sprite sheets which now replace offscreen surfaces.</li>
+                  <li>Added new <a
+                      href="RB__Clear_function.html"><b>RB.Clear</b></a> method for clearing only a section of the display or sprite sheet.</li>
+                  <li>Added <a
+                      href="RB__DrawTriangle_function.html"><b>RB.DrawTriangle</b></a> and <a
+                      href="RB__DrawTriangleFill_function.html"><b>RB.DrawTriangleFill</b></a> primitives.</li>
+                  <li>Added new Wavy and Shaky text effects.</li>
+                  <li>Added ability to change text font inline.</li>
+                  <li>Added a flag for ignoring inline text color changes (you can use this to render drop shadows behind text with inline color changes).</li>
+                  <li>Added ability to retrieve RetroBlit rendering surface so that you can render it manually, see the new OldDays demo scene!</li>
+                  <li>Added OldDays demo.</li>
+                  <li>RetroBlit can now be reinitialized at any time by subsequent calls to <a
+                      href="RB__Initialize_function.html"><b>RB.Initialize</b></a> and should no longer cause trouble if the Scene is reloaded. It's also possible to switch between different RetroBlit games by calling <a
+                      href="RB__Initialize_function.html"><b>RB.Initialize</b></a> for a different game.</li>
+                  <li>Removed Indexed Color Mode support and all related APIs.</li>
+                  <li>Removed <b>Size2i</b>, now <a
+                      href="Vector2i_struct.html"><b>Vector2i</b></a> also has width and height members (which are aliases for x, and y).</li>
+                  <li>Removed <b>ColorRGBA</b>, use <b>Color32</b> or <b>Color</b> instead.</li>
+                  <li>Removed HelloWorld demo, improved MyGame template instead.</li>
+                </ul>
+                <a
+                  name="bug_fixes8"></a>
+                <h2>Bug Fixes:</h2>
+                <ul>
+                  <li>Fix <b>RB.SpriteSheetSize</b> returning wrong values.</li>
+                  <li>Fix sprite sheet not loading if only tilemaps are being rendered.</li>
+                  <li>Fix rendering of primitives on some old hardware.</li>
+                  <li>Fix bad default audio compression on audio import.</li>
+                </ul>
+                <p>See <a
+                    href="1_5_to_2_0.html"><b>FES 1.5.0 to RetroBlit 2.0.0 porting guide</b></a>.</p>
+                <br />
+                <a
+                  name="v150__april_9_2018"></a>
+                <h1>v1.5.0 - April 9, 2018</h1>
+                <a
+                  name="new8"></a>
+                <h2>New:</h2>
+                <ul>
+                  <li>Added BrickBust complete brick-breaker demo game!</li>
+                  <li>Added <a
+                      href="RB__Ticks_property.html"><b>RB.Ticks</b></a> and <a
+                      href="RB__TicksReset_function.html"><b>RB.TicksReset</b></a> APIs</li>
+                </ul>
+                <a
+                  name="bug_fixes9"></a>
+                <h2>Bug Fixes:</h2>
+                <ul>
+                  <li>Fix game <a
+                      href="RB__Effect__Slide_eval.html"><b>RB.Effect.Slide</b></a> not clipping to <a
+                      href="RB__DisplaySize_property.html"><b>RB.DisplaySize</b></a> bounds corrects.</li>
+                  <li>Fix <b>RB.PaletteSwapGet</b> not returning the same value as set by <b>RB.PaletteSwapSet</b>!</li>
+                  <li>Fix Tilemap rendering issues when <a
+                      href="RB__HardwareSettings__MapSize_variable.html"><b>RB.HardwareSettings.MapSize</b></a> is not a multiple of the internal chunk size (16).</li>
+                </ul>
+                <br />
+                <a
+                  name="v143__march_16_2018"></a>
+                <h1>v1.4.3 - March 16, 2018</h1>
+                <a
+                  name="new9"></a>
+                <h2>New:</h2>
+                <ul>
+                  <li>Improve overall performance by significantly reducing the amount of degenerate triangles used under the hood.</li>
+                </ul>
+                <a
+                  name="bug_fixes10"></a>
+                <h2>Bug Fixes:</h2>
+                <ul>
+                  <li>Fix colors of primitives (rectangles/pixels/ellipses/lines) being incorrect in indexed mode if there are no sprites nor fonts being drawn in the same frame.</li>
+                  <li>Fix a clipping bug when drawing rectangles, filled ellipses, and orthogonal lines.</li>
+                </ul>
+                <br />
+                <a
+                  name="v142__march_5_2018"></a>
+                <h1>v1.4.2 - March 5, 2018</h1>
+                <a
+                  name="bug_fixes11"></a>
+                <h2>Bug Fixes:</h2>
+                <ul>
+                  <li>Fix regression in alpha blending where colors get darker as alpha approaches 0, this bug was introduced in v1.4.0.</li>
+                </ul>
+                <br />
+                <a
+                  name="v141__february_22_2018"></a>
+                <h1>v1.4.1 - February 22, 2018</h1>
+                <a
+                  name="new10"></a>
+                <h2>New:</h2>
+                <ul>
+                  <li>Added <a
+                      href="RB__BatchDebugEnable_function.html"><b>RB.BatchDebugEnable</b></a> and <a
+                      href="RB__BatchDebugDisable_function.html"><b>RB.BatchDebugDisable</b></a> which shows how many batch/flush operations are being performed and why.</li>
+                </ul>
+                <a
+                  name="bug_fixes12"></a>
+                <h2>Bug Fixes:</h2>
+                <ul>
+                  <li>Fix tilemap chunks not being clipped at an early stage in the pipeline if they are completely out of clip bounds. This should improve tilemap rendering performance in some scenarios.</li>
+                </ul>
+                <br />
+                <a
+                  name="v14__february_5_2018"></a>
+                <h1>v1.4 - February 5, 2018</h1>
+                <a
+                  name="new11"></a>
+                <h2>New:</h2>
+                <ul>
+                  <li>Added custom shader support! Shaders can now be applied in pixel-perfect space when drawing sprites/primitives/fonts, and also at post-process effect time. See <b>RB.ShaderSetup</b>, <a
+                      href="RB__ShaderSet_function.html"><b>RB.ShaderSet</b></a>, <a
+                      href="RB__EffectShader_function.html"><b>RB.EffectShader</b></a></li>
+                  <li>Added <a
+                      href="RB__EffectApplyNow_function.html"><b>RB.EffectApplyNow</b></a> API which specifies when post-processing effects should be applied. This is very useful if you want some drawing (eg GUI) to be affected by different post-processing effects (or none at all).</li>
+                  <li>Added <b>RB.PaletteColorSet</b> overload that allows for setting colors directly from another palette file, rather than manually one at a time.</li>
+                  <li>Added <a
+                      href="RB__SpriteIndex_function.html"><b>RB.SpriteIndex</b></a> overload that takes sprite sheet index as a parameter, previously <a
+                      href="RB__SpriteIndex_function.html"><b>RB.SpriteIndex</b></a> only worked for current sprite sheet.</li>
+                  <li>Added Unity Crash Course to the Documentation to help new Unity developers get started with RetroBlit.</li>
+                </ul>
+                <a
+                  name="bug_fixes13"></a>
+                <h2>Bug Fixes:</h2>
+                <ul>
+                  <li>Fix incorrect clipping region on Offscreen surface of different size than <a
+                      href="RB__DisplaySize_property.html"><b>RB.DisplaySize</b></a></li>
+                  <li>Fix Tilemap cell not updating when only the Tint Color or Flags are changed.</li>
+                  <li>Fix some Tilemap chunks becoming invalid and unsuable if all tiles set manually set to empty/invalid with <a
+                      href="RB__MapSpriteSet_function.html"><b>RB.MapSpriteSet</b></a></li>
+                  <li>Fix some Tilemap chunks not rendering on Offscreen surface of different size than <a
+                      href="RB__DisplaySize_property.html"><b>RB.DisplaySize</b></a></li>
+                  <li>Fix Tilemap rendering when using the Offset parameter, some chunks were not rendered.</li>
+                  <li>Fix Tilemaps leaking Meshes.</li>
+                  <li>Fix built-in font not rendering properly if there is no sprite sheets loaded.</li>
+                </ul>
+                <br />
+                <a
+                  name="v13__january_4_2018"></a>
+                <h1>v1.3 - January 4, 2018</h1>
+                <a
+                  name="new12"></a>
+                <h2>New:</h2>
+                <ul>
+                  <li>Add support for multiple offscreens with custom sizes. New APIs <b>RB.OffscreenSetup</b>, <a
+                      href="RB__Offscreen_function.html"><b>RB.Offscreen</b></a>, <b>RB.OffscreenDelete</b>. There is no longer a default offscreen created, an equivalent one can be created with <b>RB.OffscreenSetup</b></li>
+                  <li>Optimized <b>RB.DrawCopyOffscreen</b></li>
+                  <li>Added more error logs for Tilemap and Font operations which were previously failing silently.</li>
+                  <li>Added <b>RB.SoundDelete</b>, <b>RB.MusicDelete</b> and <b>RB.SpriteSheetDelete</b> APIs for explicitly releasing resources.</li>
+                </ul>
+                <a
+                  name="bug_fixes14"></a>
+                <h2>Bug Fixes:</h2>
+                <ul>
+                  <li>
+                    <b>RB.DrawCopyOffscreen</b> was flushing too much, causing too many draw calls.</li>
+                </ul>
+                <br />
+                <a
+                  name="v121__december_21_2017"></a>
+                <h1>v1.2.1 - December 21, 2017</h1>
+                <a
+                  name="new13"></a>
+                <h2>New:</h2>
+                <ul>
+                  <li>Add Stress Test app.</li>
+                  <li>Add <a
+                      href="RB__SpriteSheetGet_function.html"><b>RB.SpriteSheetGet</b></a> for retrieving current sprite sheet index.</li>
+                  <li>
+                    <b>ColorMode.RGB</b> is now the default <b>ColorMode</b> if one is not specified.</li>
+                  <li>Added ``NineSlice`` struct to define the pieces of a nine-slice image more conveniently.</li>
+                  <li>Added <a
+                      href="RB__ClipDebugEnable_function.html"><b>RB.ClipDebugEnable</b></a> and <a
+                      href="RB__ClipDebugDisable_function.html"><b>RB.ClipDebugDisable</b></a> to visualize clip regions and assist in debugging clipping related issues.</li>
+                </ul>
+                <a
+                  name="bug_fixes15"></a>
+                <h2>Bug Fixes:</h2>
+                <ul>
+                  <li>Fix music not restarting when <a
+                      href="RB__MusicStop_function.html"><b>RB.MusicStop</b></a> &amp; <a
+                      href="RB__MusicPlay_function.html"><b>RB.MusicPlay</b></a> is called.</li>
+                  <li>Fix crash when sound is played inside of <a
+                      href="RB__IRetroBlitGame__Initialize_function.html"><b>IRetroBlitGame.Initialize</b></a></li>
+                  <li>Fix occasional crash with <a
+                      href="RB__MapClear_function.html"><b>RB.MapClear</b></a> when clearing all layers.</li>
+                  <li>Don't set targetFrameRate in WebGL builds to prevent emscripten warning.</li>
+                  <li>Fix clipping region on some older hardware.</li>
+                  <li>Fix inverted ellipse rendering on some older hardware.</li>
+                  <li>Fix nine-slice rendering.</li>
+                </ul>
+                <br />
+                <a
+                  name="v12__december_7_2017"></a>
+                <h1>v1.2 - December 7, 2017</h1>
+                <a
+                  name="new14"></a>
+                <h2>New:</h2>
+                <ul>
+                  <li>Added <a
+                      href="RB__DisplayModeSet_function.html"><b>RB.DisplayModeSet</b></a> API for changing the pixel resolution of RetroBlit at any time.</li>
+                  <li>Added support for wide pixel (2x1) and tall pixel (1x2) modes which can be set in <a
+                      href="RB__IRetroBlitGame__QueryHardware_function.html"><b>IRetroBlitGame.QueryHardware</b></a> or in <a
+                      href="RB__DisplayModeSet_function.html"><b>RB.DisplayModeSet</b></a></li>
+                  <li>Allow Update FPS to be configured in <a
+                      href="RB__IRetroBlitGame__QueryHardware_function.html"><b>IRetroBlitGame.QueryHardware</b></a>, defaults to 60fps.</li>
+                  <li>Added API <a
+                      href="RB__FPS_property.html"><b>RB.FPS</b></a> and <a
+                      href="RB__UpdateInterval_property.html"><b>RB.UpdateInterval</b></a> to query update FPS, and time between update frames in milliseconds.</li>
+                  <li>
+                    <b>RB.SpriteSize</b> and <b>RB.SpriteSheetSize</b> now take optional sprite sheet index parameter to specify which sprite sheet should be queried.</li>
+                  <li>Replaced <b>ColorRGB</b> with <b>ColorRGBA</b>. The alpha component is compounded with the global alpha set by <a
+                      href="RB__AlphaSet_function.html"><b>RB.AlphaSet</b></a></li>
+                  <li>New APIs <a
+                      href="Rect2i__Intersect_function.html"><b>Rect2i.Intersect</b></a>, and <b>Rect2i.Center</b></li>
+                  <li>Added some predefined basic colors to <b>ColorRGBA</b></li>
+                </ul>
+                <a
+                  name="bug_fixes16"></a>
+                <h2>Bug Fixes:</h2>
+                <ul>
+                  <li>Palette pixels in multi-row palette files should now be read in top-left to bottom-right order, instead of bottom-left to top-right.</li>
+                </ul>
+                <br />
+                <a
+                  name="v11__november_20_2017"></a>
+                <h1>v1.1 - November 20, 2017</h1>
+                <a
+                  name="new15"></a>
+                <h2>New:</h2>
+                <ul>
+                  <li>Add support for multiple spritesheets. See <b>RB.SpriteSheetSetup</b>, <a
+                      href="RB__SpriteSheetSet_function.html"><b>RB.SpriteSheetSet</b></a>, and <a
+                      href="RB__MapLayerSpriteSheetSet_function.html"><b>RB.MapLayerSpriteSheetSet</b></a></li>
+                  <li>Add new <a
+                      href="RB__Print_function.html"><b>RB.Print</b></a> APIs that allow for specifying the text area, and text alignment within it, as well as text overflow handling strategy (overflow, clip, or word wrap).</li>
+                  <li>Greatly improved performance when rendering primitives, in particular lines, and ellipses.</li>
+                </ul>
+                <a
+                  name="bug_fixes17"></a>
+                <h2>Bug Fixes:</h2>
+                <ul>
+                  <li>Fix "false" return value when loading a TMX map from a CSV formatted file.</li>
+                  <li>Fix exception when using <b>RB.MapDataGet</b> on a null data element.</li>
+                </ul>
+                <br />
+                <a
+                  name="v10__october_19_2017"></a>
+                <h1>v1.0 - October 19, 2017</h1>
+Initial release.
+</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="footer_div">
+© 2021 Martin Cietwierkowski
+</td>
+      </tr>
+    </table>
+  </body>
+</html>

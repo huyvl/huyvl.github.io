@@ -1,0 +1,483 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml"
+  lang="en">
+  <head>
+    <meta
+      http-equiv="content-type"
+      content="text/html; charset=utf-8" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="retroblit_favicon.ico" />
+    <title>RetroBlit - Unity Crash Course</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto+Mono:500"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="doc.css" />
+  </head>
+  <body>
+    <table
+      class="container_div">
+      <tr
+        style="padding: 0px; margin: 0px">
+        <td
+          class="title_div">
+          <table
+            class="menu_shadow"
+            style="background-color: e6eefc; padding: 0px; margin: 0px; width: 100%;">
+            <tr
+              style="padding: 0px; margin: 0px">
+              <td
+                style="padding: 0px; margin: 0px">
+                <img
+                  src="top_menu_logo.png"
+                  style="width: 69px; height: 85px; image-rendering: pixelated; padding-right:1em;"
+                  alt="RetroBlit" />
+              </td>
+              <td>
+                <span
+                  style="font-size: 24px; font-variant: small-caps;">Documentation</span>
+                <br />
+                <span
+                  style="font-size: 12px;">v3.2.0</span>
+              </td>
+              <td
+                style="width:12em"></td>
+              <td
+                class="menu_darkbg_shadow"
+                style="width:0.15em; padding: 0.15em" />
+              <td
+                class="menu_darkbg"
+                style="width:1em;" />
+              <td
+                class="menu_darkbg">
+                <table
+                  style="height:75% float:right">
+                  <tr>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="index.html">Intro</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="features.html">Features</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item_selected">
+Unity<br />Crash Course
+</td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="RB_class.html">API<br />Reference</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="history.html">Version<br />History</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="legal.html">Legal</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                  </tr>
+                </table>
+              </td>
+              <td
+                class="menu_darkbg">
+ 
+</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table>
+            <tr>
+              <td
+                class="content_div">
+                <a
+                  name="unity_crash_course"></a>
+                <h1>Unity Crash Course</h1>
+                <p>RetroBlit offers a code-only development approach that is very unlike normal Unity development, however a very basic knowledge of Unity is still
+required to setup a RetroBlit project. This guide will help you get going in minutes!</p>
+                <p>If you've ever done anything in Unity before you will likely not need this guide at all.</p>
+                <br />
+                <a
+                  name="get_unity"></a>
+                <h1>Get Unity!</h1>
+                <p>Download and install Unity from the Unity website. Unity installs are managed by Unity Hub application. Within the Hub you can not only manage your projects, but also
+multiple installations of different Unity versions. The minimum supported Unity version for RetroBlit is 2019.3. In this crash course we'll use Unity version 2019.4 LTS. LTS stands for Long Term Support, Unity releases at least one LTS version
+per year, and supports it for an extended amount of time. It's usually best to pick an LTS version of Unity for greatest stability and support.</p>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="unity_hub.png"
+                    alt="Unity Hub" />
+                </div>
+                <p>Unity Personal edition is free of charge (as in beer, no credit cards, no royalities) so long as your annual revenue from your Unity projects (or related fundraising)
+is under a certain amount, a large amount at that. Beyond these revenue limits you would need to pay for Unity Plus, a very reasonable amount given the revenue bracket you would be in.
+See the Unity website for up to date details.</p>
+                <p>When installing Unity you will be presented with a list of platforms you want to support, as well as other optional tools. You can change your
+installation at any time so don't worry about making the wrong choice here.</p>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="unity_install.png"
+                    alt="Install" />
+                </div>
+                <br />
+                <a
+                  name="create_a_retroblit_project"></a>
+                <h1>Create a RetroBlit Project</h1>
+                <p>While setting up your first project you will require internet connectivity. Afterwards you only require internet connectivity if you want to
+update Unity and/or RetroBlit.</p>
+                <p>Launch Unity from your Desktop. The first time you launch Unity you will be asked to login with your account. If you do not have a Unity
+account yet you can create one now, or use a sign-in partner like Google or Facebook.</p>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="unity_login.png"
+                    alt="Login" />
+                </div>
+                <br />
+                <p>Once logged in you can press <b>New</b> to create your Unity project. A list of project templates will be shown. We're not interested in any of these in particular as they do not relate to how
+development is done for RetroBlit. I recommend picking the 2D project template as it provides the simplest Unity default layout.</p>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="unity_wizard.png"
+                    alt="Project wizard" />
+                </div>
+                <br />
+                <p>The next screen will be your main Unity IDE screen. It may look overwhelming at first sight, but don't worry, for RetroBlit we only need to learn
+a tiny subset of this IDE.</p>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="unity_mainscreen.png"
+                    alt="Main Unity Editor screen" />
+                </div>
+                <br />
+                <p>First lets add RetroBlit to this project. Click on <b>Window → Asset Store</b> to open up the Asset Store.</p>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="unity_openstore.png"
+                    alt="Open asset store" />
+                </div>
+                <br />
+                <p>Now search for "RetroBlit".</p>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="unity_assetstore_search.png"
+                    alt="Search asset store" />
+                </div>
+                <br />
+                <p>RetroBlit should appear on the top of the search results, you may have to scroll down a bit past the search refining options to see it.</p>
+                <p>Click on RetroBlit Retro Game Framework and you should arrive on the asset page. Scroll down a bit and you will see either an <b>Import</b> button if you
+already own RetroBlit, an <b>Update</b> button if a new version of RetroBlit is available, or an <b>Add to Cart</b> button if you have not purchased RetroBlit
+yet. Once ready click the Import button to proceed.</p>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="unity_assetstore_import1.png"
+                    alt="Import step 1" />
+                </div>
+                <br />
+                <p>A dialog should show up now warning you that RetroBlit is a <b>Complete Project</b> and will overwrite your existing project settings, we very much
+want this, click Import.</p>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="unity_assetstore_import2.png"
+                    alt="Import step 2" />
+                </div>
+                <br />
+                <p>Finally Unity will show you what files it's about to import, leave them all selected and click Import.</p>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="unity_import_final.png"
+                    alt="Import step 3" />
+                </div>
+                <br />
+                <p>Great, you now have yourself a RetroBlit project! You can now close the Asset Store window by right clicking the Asset Store tab on top.
+From now on you will not require internet connectivity to develop your game.</p>
+                <p>A Unity project stores all its files in an <span
+                    class="filename">Assets</span> folder which you can see in the lower left corner of the IDE window. Unity projects are typically
+split into multiple Scenes, but for RetroBlit we only need one scene per project. To get started expand your <span
+                    class="filename">Assets</span> folder, and click on the Scenes
+folder. RetroBlit comes with a bunch of examples including a barebones Scene called MyGame, double click MyGame now.</p>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="unity_selectscene.png"
+                    alt="Selection Unity scene" />
+                </div>
+                <br />
+                <p>Now click the <b>Play</b> button on top of the screen and... that's it! Your barebones RetroBlit game is running! If you don't see the game make sure
+the <b>Game</b> tab is selected on the row just below the <b>Play</b> button.</p>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="unity_play.png"
+                    alt="Play" />
+                </div>
+                <br />
+                <p>From this point on you will mostly use the Unity IDE to click the Play button on and off, and view runtime logs!</p>
+                <br />
+                <a
+                  name="writing_code"></a>
+                <h1>Writing Code</h1>
+                <p>To start writing code you can use Unity IDE to open the project in Visual Studio by clicking <b>Assets → Open C# Project</b>, this option will also create the Visual Studio project if one doesn't
+exist yet. You can also just double click a source file under the <span
+                    class="filename">Assets</span> folder (bottom left of the Unity IDE). Finally you can just directly open a source file from your project folder with
+any editor you like.</p>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="unity_opencode.png"
+                    alt="Open project source code" />
+                </div>
+                <br />
+                <p>In this guide we're using Visual Studio. Using the Visual Studio Solution Explorer expand the <span
+                    class="filename">Assets/RetroBlit/Scripts/MyGame</span> folder, and open
+the <span
+                    class="filename">MyGame.cs</span> file. The entire demo you saw earlier is contained in this file, have a look. For an explaintion of what is happening here please see <a
+                    class="doc_link"
+                    href="features.html#the_game_loop">The Game Loop</a>.</p>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="unity_code.png"
+                    alt="Source code in Visual Studio" />
+                </div>
+                <br />
+                <p>Of course a project of any complexity would require more source files, you can add source files anywhere inside the Assets folder, so go ahead and organize your code how you like it.</p>
+                <br />
+                <a
+                  name="compiling_code"></a>
+                <h1>Compiling Code</h1>
+                <p>Compiling code is trivial! You don't actually have to do anything, when you next click on the Unity IDE window it will scan your project for changed files and compile
+changed or new source files for you! If there is a compilation error it will be shown on the bottom of the Unity IDE window. Clicking the error will show the console, which may
+contain more details and other errors.</p>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="unity_compile_error.png"
+                    alt="Unity compilation errors" />
+                </div>
+                <br />
+                <p>The console is important because it will also show you warnings and logs. You can log to the console yourself:</p>
+                <table
+                  class="code_table">
+                  <tr>
+                    <td
+                      class="code_block">UnityEngine.Debug.Log(<span
+                        class="code_literal">"Hi there!"</span>);</td>
+                  </tr>
+                </table>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="unity_logging.png"
+                    alt="Unity logging" />
+                </div>
+                <br />
+                <p>It gets even better! Double-clicking any log line or compilation error will take you directly to that line of code in your code editor, granted that your code editor supports this level of
+integration.</p>
+                <br />
+                <a
+                  name="adding_resources"></a>
+                <h1>Adding Resources</h1>
+                <p>Adding resources is also very trivial. Simply put your images, sounds, music, and even tmx tilemaps into any folder in your project that descends from a folder
+named <span
+                    class="filename">Resources</span>. The <span
+                    class="filename">Resources</span> folder must itself be somewhere under the <span
+                    class="filename">Assets</span> folder.</p>
+                <p>MyGame example has its sprite sheet located at <span
+                    class="filename">Assets/RetroBlit/Resources/Demos/MyGame/MySprites.png</span>.</p>
+                <p>As with source file compilation any resource changes are automatically picked up by Unity next time the Unity IDE window is in focus. It's worth noting that in a typical Unity
+application the user will want to edit specific resource import settings, but RetroBlit takes care of all of that for you, so you do not have to do anything else!</p>
+                <br />
+                <a
+                  name="debugging"></a>
+                <h1>Debugging</h1>
+                <p>Unity supports live debugging, which works great with Visual Studio, and some other editors. Simply set your breakpoints in your code editor, and attach to the Unity process. You may also
+attach to the Unity process before you press the <b>Play</b> button, which is great for setting breakpoints in your initialization code.</p>
+                <p>For Visual Studio specifically you may have to install <b>Visual Studio Tools for Unity</b> to debug Unity, but if you've installed Visual Studio via the Unity installer then
+you probably already have this plugin installed.</p>
+                <br />
+                <a
+                  name="deploying_your_game"></a>
+                <h1>Deploying Your Game</h1>
+                <p>This is where Unity really shines. Deploying your project to a wide variety of platforms is very simple! First go to <b>File → Build Settings</b>.</p>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="unity_build1.png"
+                    alt="Unity build step 1" />
+                </div>
+                <br />
+                <p>Select your target platform. If you don't see your platform here you may have not installed support for it, just re-run the installer and select the platform from there.</p>
+                <p>Ensure your game scene is shown and selected in the <b>Scenes in Build</b> list. If it is not then you can simply click <b>Add Open Scenes</b> to add it.</p>
+                <p>Now you can just click <b>Build</b> and build your game with default settings, or you can customize the build by clicking <b>Player Settings...</b></p>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="unity_build2.png"
+                    alt="Unity build step 2" />
+                </div>
+                <br />
+                <p>From the <b>Player Settings</b> you can configure a myriad of options, such as game title, icons, splash screens, supported resolutions, portrait/landscape
+orientation (mobile), developer information, and more. For a final product you will likely want to fiddle with these settings, but meanwhile the default settings will do just fine!</p>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="unity_build3.png"
+                    alt="Unity build step 3" />
+                </div>
+                <br />
+                <a
+                  name="demo_cleanup"></a>
+                <h1>Demo Cleanup</h1>
+                <p>RetroBlit comes with a number of examples and optional material that you may want to remove to reduce the size of your project. You may delete any of these folders:</p>
+                <ul>
+                  <li>
+                    <span
+                      class="filename">RetroBlit/Docs</span>
+                  </li>
+                  <li>
+                    <span
+                      class="filename">RetroBlit/Resources</span>
+                  </li>
+                  <li>
+                    <span
+                      class="filename">RetroBlit/Scenes</span>
+                  </li>
+                  <li>
+                    <span
+                      class="filename">RetroBlit/Scripts/Demos</span>
+                  </li>
+                  <li>
+                    <span
+                      class="filename">RetroBlit/Scripts/MyGame</span>
+                  </li>
+                </ul>
+                <p>Of course if you continue building on top of the MyGame example then make sure you move its files to somewhere else before you delete
+<span
+                    class="filename">RetroBlit/Scripts/MyGame</span>, <span
+                    class="filename">RetroBlit/Scenes</span>, and <span
+                    class="filename">RetroBlit/Resources/MyGame</span>!</p>
+                <br />
+                <a
+                  name="other_tips"></a>
+                <h1>Other Tips</h1>
+                <p>Because RetroBlit doesn't use most of Unity IDE you may want to select the option Maximize On Play so that your game window fills more of your screen.
+Also notice that there is a Scale slider that can resize the game window. If this slider is not at 1x then what you're seeing will be scaled up/down and may look distorted.</p>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="unity_max.png"
+                    alt="Maximize view" />
+                </div>
+                <br />
+                <p>You may want to test your game on different resolutions to see how it would look. You can select an existing resolution from the drop down, or enter your own custom resolution.</p>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="unity_res.png"
+                    alt="Pick resolution" />
+                </div>
+                <br />
+                <p>You can enable a <b>Stats</b> overlay that will show you some performance metrics for your game, including frames per second. Keep in mind however that these stats reflect the performance
+of your game while running within the Unity editor. Once you build your game for release it will run significantly faster.</p>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="unity_stats.png"
+                    alt="Rendering stats" />
+                </div>
+                <br />
+                <p>From <b>Window → Profiler</b> you can open the Profiler which can give you quite a bit of insight into where your game may have performance issues. I suggest reading more on the Profiler online
+to learn how to best get useful information out of it.</p>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="unity_profiler.png"
+                    alt="Unity profiler" />
+                </div>
+                <br />
+                <a
+                  name="getting_more_help"></a>
+                <h1>Getting More Help</h1>
+                <p>Unity has another great advantage, it is extremely popular! If you run into any issues with it just search online and you're bound to find an answer quickly!</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="footer_div">
+© 2021 Martin Cietwierkowski
+</td>
+      </tr>
+    </table>
+  </body>
+</html>

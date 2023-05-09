@@ -1,0 +1,453 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml"
+  lang="en">
+  <head>
+    <meta
+      http-equiv="content-type"
+      content="text/html; charset=utf-8" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="retroblit_favicon.ico" />
+    <title>RetroBlit - Intro</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto+Mono:500"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="doc.css" />
+  </head>
+  <body>
+    <table
+      class="container_div">
+      <tr
+        style="padding: 0px; margin: 0px">
+        <td
+          class="title_div">
+          <table
+            class="menu_shadow"
+            style="background-color: e6eefc; padding: 0px; margin: 0px; width: 100%;">
+            <tr
+              style="padding: 0px; margin: 0px">
+              <td
+                style="padding: 0px; margin: 0px">
+                <img
+                  src="top_menu_logo.png"
+                  style="width: 69px; height: 85px; image-rendering: pixelated; padding-right:1em;"
+                  alt="RetroBlit" />
+              </td>
+              <td>
+                <span
+                  style="font-size: 24px; font-variant: small-caps;">Documentation</span>
+                <br />
+                <span
+                  style="font-size: 12px;">v3.2.0</span>
+              </td>
+              <td
+                style="width:12em"></td>
+              <td
+                class="menu_darkbg_shadow"
+                style="width:0.15em; padding: 0.15em" />
+              <td
+                class="menu_darkbg"
+                style="width:1em;" />
+              <td
+                class="menu_darkbg">
+                <table
+                  style="height:75% float:right">
+                  <tr>
+                    <td
+                      class="top_menu_item_selected">
+Intro
+</td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="features.html">Features</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="unity.html">Unity<br />Crash Course</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="RB_class.html">API<br />Reference</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="history.html">Version<br />History</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                    <td
+                      class="top_menu_item">
+                      <a
+                        class="menu"
+                        href="legal.html">Legal</a>
+                    </td>
+                    <td
+                      class="menu_darkbg"
+                      style="width:1em"></td>
+                  </tr>
+                </table>
+              </td>
+              <td
+                class="menu_darkbg">
+ 
+</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table>
+            <tr>
+              <td
+                class="content_div">
+                <div
+                  class="img_center">
+                  <img
+                    src="logo_large.png"
+                    alt="RetroBlit" />
+                  <br />v3.2.0</div>
+                <br />
+                <br />
+                <a
+                  name="welcome_to_the_retroblit_game_framework"></a>
+                <h1>Welcome to the RetroBlit game framework!</h1>
+                <p>RetroBlit is a simple to use game framework implemented as a Unity Asset. It aims to create an ideal, low friction environment
+for making pixel-perfect retro games from the early 90s era. RetroBlit takes advantage of the portability, and the ease of deployment
+that Unity provides, but does away with the Unity Editor interface in favour of a traditional game loop, and code-only
+development. There are no scene graphs, no GameObjects, no MonoBehaviour, there is only a simple low level API for
+rendering sprites, fonts, primitives, and tilemaps. RetroBlit also provides a simple API for handling input and playing sound and music.</p>
+                <p>Have a look at this basic "hello world" program:</p>
+                <table
+                  class="code_table">
+                  <tr>
+                    <td
+                      class="code_block">
+                      <span
+                        class="code_keyword">public</span> <span
+                        class="code_type">class</span> HelloWorld : <a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.<a
+                        style="code_link"
+                        href="RB__IRetroBlitGame_interface.html"><span
+                          class="code_rb">IRetroBlitGame</span></a><br />{<br />    <span
+                        class="code_keyword">public</span> <a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.<a
+                        style="code_link"
+                        href="RB__HardwareSettings_class.html"><span
+                          class="code_rb">HardwareSettings</span></a> QueryHardware()<br />    {<br />        <span
+                        class="code_type">var</span> hw = <span
+                        class="code_keyword">new</span> <a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.<a
+                        style="code_link"
+                        href="RB__HardwareSettings_class.html"><span
+                          class="code_rb">HardwareSettings</span></a>();<br /><br />        hw.DisplaySize = <span
+                        class="code_keyword">new</span> Size2i(<span
+                        class="code_literal">320</span>, <span
+                        class="code_literal">180</span>);<br /><br />        <span
+                        class="code_keyword">return</span> hw;<br />    }<br /><br />    <span
+                        class="code_keyword">public</span> <span
+                        class="code_type">bool</span> Initialize()<br />    {<br />        <span
+                        class="code_keyword">return</span> <span
+                        class="code_keyword">true</span>;<br />    }<br /><br />    <span
+                        class="code_keyword">public</span> <span
+                        class="code_type">void</span> Update()<br />    {<br />    }<br /><br />    <span
+                        class="code_keyword">public</span> <span
+                        class="code_type">void</span> Render()<br />    {<br />        <a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.<a
+                        style="code_link"
+                        href="RB__Clear_function.html"><span
+                          class="code_rb">Clear</span></a>(Color.gray);<br />        <a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.<a
+                        style="code_link"
+                        href="RB__Print_function.html"><span
+                          class="code_rb">Print</span></a>(<span
+                        class="code_keyword">new</span> <a
+                        style="code_link"
+                        href="Vector2i_struct.html"><span
+                          class="code_rb">Vector2i</span></a>(<span
+                        class="code_literal">137</span>, <span
+                        class="code_literal">80</span>), Color.white, <span
+                        class="code_literal">"Hello World"</span>);<br />    }<br />}</td>
+                  </tr>
+                </table>
+                <p>Let's have a closer look at what is happening here.</p>
+                <table
+                  class="code_table">
+                  <tr>
+                    <td
+                      class="code_block">
+                      <span
+                        class="code_keyword">public</span> <span
+                        class="code_type">class</span> HelloWorld : <a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.<a
+                        style="code_link"
+                        href="RB__IRetroBlitGame_interface.html"><span
+                          class="code_rb">IRetroBlitGame</span></a></td>
+                  </tr>
+                </table>
+                <p>Every RetroBlit game implements the <a
+                    href="RB__IRetroBlitGame_interface.html"><b>IRetroBlitGame</b></a> interface, which contains the methods:
+<a
+                    href="RB__IRetroBlitGame__QueryHardware_function.html"><b>QueryHardware</b></a>, <a
+                    href="RB__IRetroBlitGame__Initialize_function.html"><b>Initialize</b></a>,
+<a
+                    href="RB__IRetroBlitGame__Update_function.html"><b>Update</b></a> and <a
+                    href="RB__IRetroBlitGame__Render_function.html"><b>Render</b></a></p>
+                <table
+                  class="code_table">
+                  <tr>
+                    <td
+                      class="code_block">
+                      <span
+                        class="code_keyword">public</span> <a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.<a
+                        style="code_link"
+                        href="RB__HardwareSettings_class.html"><span
+                          class="code_rb">HardwareSettings</span></a> QueryHardware()<br />{<br />    <span
+                        class="code_type">var</span> hw = <span
+                        class="code_keyword">new</span> <a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.<a
+                        style="code_link"
+                        href="RB__HardwareSettings_class.html"><span
+                          class="code_rb">HardwareSettings</span></a>();<br /><br />    hw.DisplaySize = <span
+                        class="code_keyword">new</span> Size2i(<span
+                        class="code_literal">320</span>, <span
+                        class="code_literal">180</span>);<br /><br />    <span
+                        class="code_keyword">return</span> hw;<br />}</td>
+                  </tr>
+                </table>
+                <p>The QueryHardware implementation simply populates the <a
+                    href="RB__HardwareSettings_class.html"><b>HardwareSettings</b></a> structure and returns it back to RetroBlit.
+In this case we are specifying that our retro display should have the resolution 320 x 180.</p>
+                <table
+                  class="code_table">
+                  <tr>
+                    <td
+                      class="code_block">
+                      <span
+                        class="code_keyword">public</span> <span
+                        class="code_type">bool</span> Initialize()<br />{<br />    <span
+                        class="code_keyword">return</span> <span
+                        class="code_keyword">true</span>;<br />}</td>
+                  </tr>
+                </table>
+                <p>In the <a
+                    href="RB__IRetroBlitGame__Initialize_function.html"><b>Initialize</b></a> method the RetroBlit game can perform its initialization. If it's successful it should return <span
+                    class="keyword">true</span>. If <span
+                    class="keyword">false</span> is returned RetroBlit will stop.</p>
+                <table
+                  class="code_table">
+                  <tr>
+                    <td
+                      class="code_block">
+                      <span
+                        class="code_keyword">public</span> <span
+                        class="code_type">void</span> Update()<br />{<br />}</td>
+                  </tr>
+                </table>
+                <p>Game logic goes into the <a
+                    href="RB__IRetroBlitGame__Update_function.html"><b>Update</b></a> method which is called at a configurable fixed frame rate. However, in this simple program we don't have any logic to run.</p>
+                <table
+                  class="code_table">
+                  <tr>
+                    <td
+                      class="code_block">
+                      <span
+                        class="code_keyword">public</span> <span
+                        class="code_type">void</span> Render()<br />{<br />    <a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.<a
+                        style="code_link"
+                        href="RB__Clear_function.html"><span
+                          class="code_rb">Clear</span></a>(Color.gray);<br />    <a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.<a
+                        style="code_link"
+                        href="RB__Print_function.html"><span
+                          class="code_rb">Print</span></a>(<span
+                        class="code_keyword">new</span> <a
+                        style="code_link"
+                        href="Vector2i_struct.html"><span
+                          class="code_rb">Vector2i</span></a>(<span
+                        class="code_literal">137</span>, <span
+                        class="code_literal">80</span>), Color.white, <span
+                        class="code_literal">"Hello World"</span>);<br />}</td>
+                  </tr>
+                </table>
+                <p>
+                  <a
+                    href="RB__IRetroBlitGame__Render_function.html">
+                    <b>Render</b>
+                  </a> is where all drawing happens. Here we simply clear the screen to gray, and print the string "Hello World" in the center of the display,
+using the default RetroBlit system font.</p>
+                <p>There is only one thing left, and that is to tell RetroBlit about our game. To do that we simply need to call <a
+                    href="RB__Initialize_function.html"><b>RB.Initialize</b></a> from a <span
+                    class="keyword">MonoBehaviour</span><span
+                    class="keyword">GameObject</span> (the only <span
+                    class="keyword">MonoBeahviour</span>
+object you'll need with RetroBlit!). Simply use this code:</p>
+                <table
+                  class="code_table">
+                  <tr>
+                    <td
+                      class="code_block">
+                      <span
+                        class="code_keyword">using</span> UnityEngine;<br /><br /><span
+                        class="code_keyword">public</span> <span
+                        class="code_type">class</span> HelloWorldEntry : MonoBehaviour<br />{<br />    <span
+                        class="code_keyword">private</span> <span
+                        class="code_type">void</span> Awake()<br />    {<br />        <a
+                        style="code_link"
+                        href="RB_class.html"><span
+                          class="code_rb">RB</span></a>.<a
+                        style="code_link"
+                        href="RB__Initialize_function.html"><span
+                          class="code_rb">Initialize</span></a>(<span
+                        class="code_keyword">new</span> HelloWorld());<br />    }<br />}</td>
+                  </tr>
+                </table>
+                <p>That's it! Press Play in the Unity Editor, and you should see this output:</p>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="output_helloworld.png"
+                    alt="Hello World" />
+                </div>
+                <p>You just made a pixel perfect Hello World game in Unity, without fiddling with camera settings, messing around with texture filters,
+or dealing with an overwhelming interface that was never designed for creation of retro style pixel perfect games.</p>
+                <p>RetroBlit comes with a bare-bones game that you can use as a starting template. Please see <span
+                    class="filename">Assets/RetroBlit/Scenes/MyGame</span> Scene and the
+<span
+                    class="filename">Asssets/RetroBlit/Scripts/MyGame/MyGame.cs</span> source file.</p>
+                <a
+                  name="more_examples"></a>
+                <h1>More Examples</h1>
+                <p>Hello World examples are great, but they're not very impressive are they? RetroBlit comes with some more entertaining example projects. Each demo project
+has its own Scene, have a look at the Scenes in <span
+                    class="filename">Assets/RetroBlit/Scenes</span>. Here is a quick preview:</p>
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="example_reel.png"
+                    alt="Example Demo Reel" />
+                  <br />
+                  <br />Feature Demo Reel in Scene <span
+                    class="filename">Assets/RetroBlit/Scenes/DemoReel</span> and source file <span
+                    class="filename">Assets/RetroBlit/Scripts/Demos/DemoReel/DemoReel.cs</span></div>
+                <br />
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="example_sfr.png"
+                    alt="Example Super Flag Run" />
+                  <br />
+                  <br />Super Flag Run in Scene <span
+                    class="filename">Assets/RetroBlit/Scenes/SuperFlagRun</span> and source file <span
+                    class="filename">Assets/RetroBlit/Scripts/Demos/SuperFlagRun/SuperFlagRun.cs</span></div>
+                <br />
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="example_bb.png"
+                    alt="Example Brick-Bust" />
+                  <br />
+                  <br />BrickBust! A Complete bricker-breaker game in Scene <span
+                    class="filename">Assets/RetroBlit/Scenes/BrickBust</span> and source file <span
+                    class="filename">Assets/RetroBlit/Scripts/Demos/BrickBust/BrickBustGame.cs</span></div>
+                <br />
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="example_rd.png"
+                    alt="Example Retro Dungeoneer" />
+                  <br />
+                  <br />Retro Dungeoneer, a complete roguelike game, find it in Scene <span
+                    class="filename">Assets/RetroBlit/Scenes/RetroDungeoneer</span> and source file <span
+                    class="filename">Assets/RetroBlit/Scripts/Demos/RetroDungeoneer/RetroDungeoneerGame.cs</span></div>
+                <br />
+                <div
+                  class="img_center">
+                  <img
+                    class="img_shadow"
+                    src="example_render.png"
+                    alt="Example Custom Render" />
+                  <br />
+                  <br />RetroBlit allows you to get a hold of it's rendering texture, and render it yourself in a Unity Scene, find an example of that in <span
+                    class="filename">Assets/RetroBlit/Scenes/OldDays</span> and source file <span
+                    class="filename">Assets/RetroBlit/Scripts/Demos/OldDays/OldDays.cs</span></div>
+                <br />
+                <a
+                  name="whats_next"></a>
+                <h1>What's Next?</h1>
+                <p>Learn more about the RetroBlit feature set by exploring the <a
+                    class="doc_link"
+                    href="features.html">Features</a> section.</p>
+                <p>If you've never used Unity before don't worry! You only need a very basic knowledge of the Unity IDE which you can learn in the <a
+                    class="doc_link"
+                    href="unity.html">Unity Crash Course</a> section.</p>
+                <p>If you need API details check out the <a
+                    class="doc_link"
+                    href="RB_class.html">API Reference</a>. You can also have a look at the RetroBlit API directly in the <span
+                    class="filename">RetroBlit/Scripts/RetroBlit.cs</span> source file.</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="footer_div">
+© 2021 Martin Cietwierkowski
+</td>
+      </tr>
+    </table>
+  </body>
+</html>
